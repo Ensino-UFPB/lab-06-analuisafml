@@ -154,8 +154,31 @@ function checaDigitoVerificador(cpf, multiplicador) {
     return false
 }
 
+
 function confirmaDigito(soma) {
     return 11 - (soma % 11)
+}
+
+function validaTelefone(input) {
+    const telefoneSimb = /^(?:\(?\d{2}\)?\s?)?\d{5}-?\d{4}$/;
+    let mensagem = ''
+
+    if (!telefoneSimb.test(input.value)) {
+        mensagem = 'Este formato não é válido.'
+    }
+
+    input.setCustomValidity(mensagem)
+}
+
+function validaInstagram(input) {
+    const instagramSimb = /^@[\w\.]+$/;
+    let mensagem = ''
+
+    if (!instagramSimb.test(input.value)) {
+        mensagem = 'Este formato não é válido.'
+    }
+
+    input.setCustomValidity(mensagem)
 }
 
 function recuperarCEP(input) {
